@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+def boby(request):
+	render(request, 'login_header.html', {})
+	return render(request, 'body.html', {})

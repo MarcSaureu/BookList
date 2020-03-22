@@ -56,7 +56,7 @@ ROOT_URLCONF = 'BookList.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['BookList/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

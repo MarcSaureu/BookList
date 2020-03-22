@@ -1,4 +1,5 @@
 from django.shortcuts import render
 
-def boby(request):
-	return render(request, 'body.html', {})
+def home(request):
+	print('ok')
+	return render(request, 'home.html', {})

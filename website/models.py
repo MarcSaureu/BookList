@@ -2,25 +2,28 @@ from django.db import models
 
 # Create your models here.
 class User(models.Model):
-    id = models.IntegerField()
-    first_name = models.CharField(max_length = 50)
-    last_name = models.CharField(max_length = 50)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
     birth_date = models.DateField()
-    user = models.CharField(max_length = 20)
-    email = models.CharField(max_length = 40)
-    password = models.CharField(max_length = 20)
-
-class Book(models.Model):
-    id = models.IntegerField()
-    ISBN = models.CharField(max_length = 13)
-    title = models.CharField(max_length = 50)
-    cover_page = models.FilePathField(path = '/img')
-    synopsis = models.TextField()
-    release_date = models.DateField()
+    user = models.CharField(max_length=20, unique=True)
+    email = models.CharField(max_length=40, unique=True)
+    password = models.CharField(max_length=20)
 
 class Author(models.Model):
-    id = models.IntegerField()
-    first_name = models.CharField(max_length = 50)
-    last_name = models.CharField(max_length = 50)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
     birth_date = models.DateField()
-    photo = models.FilePathField(path = '/img')
+    photo = models.FilePathField(path='/img')
+
+class Book(models.Model):
+    ISBN = models.CharField(max_length=13, unique=True)
+    title = models.CharField(max_length=50)
+    cover_page = models.FilePathField(path='/img')
+    synopsis = models.TextField()
+    release_date = models.DateField()
+    authors = models.ManyToManyField(Author)
+
+class List(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    books = models.ManyToManyField(Book)
+    

@@ -1,6 +1,21 @@
 {% extends "header.html" %}
 
+{% load static %}
 
 {% block page_content %}
-	<p>body</p>
+<h1>Users</h1>
+<div class="row">
+{% for user in users %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{% static user.photo %}"/>
+            <div class="card-body">
+                <h5 class="card-title">Username: {{ user.user_alias }}</h5>
+                <p class="card-text">Email: {{ user.email }}</p>
+                <p class="card-text">Password: {{ user.password }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}

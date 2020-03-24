@@ -5,15 +5,16 @@ class User(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     birth_date = models.DateField()
-    user = models.CharField(max_length=20, unique=True)
+    user_alias = models.CharField(max_length=20, unique=True)
     email = models.CharField(max_length=40, unique=True)
     password = models.CharField(max_length=20)
+    photo = models.FilePathField(path='/img', default='img/no_photo.png')
 
 class Author(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     birth_date = models.DateField()
-    photo = models.FilePathField(path='/img')
+    photo = models.FilePathField(path='/img', default='img/no_photo.png')
 
 class Book(models.Model):
     ISBN = models.CharField(max_length=13, unique=True)
@@ -24,6 +25,6 @@ class Book(models.Model):
     authors = models.ManyToManyField(Author)
 
 class List(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     books = models.ManyToManyField(Book)
     

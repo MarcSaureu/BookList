@@ -2,9 +2,6 @@ from django.shortcuts import render
 from .models import User
 
 def home(request):
-<<<<<<< HEAD
-	return render(request, 'home.html', {})
-=======
 	users = User.objects.all()
 	
 	context = {
@@ -27,4 +24,3 @@ u1 = User(
 
 u1.save() 
 """
->>>>>>> head

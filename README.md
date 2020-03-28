@@ -20,5 +20,36 @@ Para desarrollar la interfaz web de BookList utilizamos las siguientes tecnologi
 - [X] Utilización de CSS 3
 - [X] Utilización de la versión 4 del famoso Framework Bootstrap
 
-## Versión Web
-La versión actual es 0.1-alpha
+
+## How to RUN
+- Requisites
+
+  This project uses python 3.7.6 and pip.
+  With the first step done, you will need to install with pip all the prerequisites in requirements.txt.
+  
+- Running Project
+
+  First of all you need to clone the repository before the requeriments part.
+
+  $ source venv/bin/activate
+  $ python manage.py runserver
+
+- Users
+
+  Admin User
+  Username : admin
+  Password : admin
+
+  Normal User
+  Username : provauser
+  Password : user1234
+
+## Design Decisions
+
+- Models
+
+  The model we are using is defined in the file ClassDiagram.png
+
+- Model
+  The models are defined in the ClassDiagram.png
+

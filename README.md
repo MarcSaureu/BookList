@@ -1,7 +1,7 @@
 # BookList
 Web Project - Main Project
 
-## Collaborators 
+## Collaborators
 * Ahmed Azzamouri
 * Pau Agusti
 * Daniel Farre

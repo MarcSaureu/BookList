@@ -12,6 +12,6 @@ services:
       - .env
 
     ports:
-      - "8000:8000"
+      - "80:${DJANGO_PORT}"
 
     command: sh./docker-booklist-app-commands.sh

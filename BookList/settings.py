@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
+import django_heroku
 import os
 from django.urls import reverse_lazy
 
@@ -123,3 +124,5 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL =  '/'
 LOGOUT_REDIRECT_URL = '/'
+
+django_heroku.settings(locals())

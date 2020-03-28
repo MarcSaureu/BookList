@@ -2,11 +2,15 @@ language: python
 python:
   - "3.7"
 
+services:
+  - docker
+
 install:
   - pip install -r requirements.txt
 
 before_script:
   - python manage.py migrate
+  - pip install docker-compose
 
 script:
-  - python manage.py test apps
+  - docker-compose run app sh -c "python manage.py test "

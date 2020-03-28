@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  web:
+    build: .
+
+    container_name: booklist
+
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    ports:
+      - "80:${DJANGO_PORT}"
+
+    command: sh./docker-booklist-app-commands.sh

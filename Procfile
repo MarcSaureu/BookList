@@ -1,1 +1,1 @@
-web: gunicorn website.wgsi
+web: gunicorn Booklist.wgsi

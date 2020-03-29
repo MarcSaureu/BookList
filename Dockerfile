@@ -6,9 +6,9 @@ ENV PYTHONUNBUFFERED 1
 RUN mkdir /booklist
 WORKDIR /booklist
 
-COPY requeriments.txt /booklist/
+ADD requirements.txt /booklist/
 RUN apk update
-RUN pip install -r requeriments.txt
+RUN pip install -r requirements.txt
 
 COPY . /booklist
 

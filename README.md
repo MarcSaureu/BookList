@@ -8,17 +8,17 @@ Web Project - Main Project
 * Guillem Felis
 * Marc Saureu
 
-## Tecnologias
+## Tecnologies
 ### Back-End
-Para desarrollar la logica de negocio de BookList utilizamos las siguientes tecnologias:
-- [X] Utilizamos el ***Framework* Django** en su ultima versión, la 3.1.
-- [X] Utilizamos la libreria: **Google Books APIs**
+For the development of the bussines model of BookList we use the following tecnologies:
+- [X]  Use of ***Framework* Django** in the version 3.0.4.
+- [X] Use of the library: **Google Books APIs**
 
 ### Front-End
-Para desarrollar la interfaz web de BookList utilizamos las siguientes tecnologias:
-- [X] Utilización de **HTML 5**
-- [X] Utilización de **CSS 3**
-- [X] Utilización de la versión 4 del famoso Framework **Bootstrap**
+For the development of the web interface of BookList we use the following tecnologies:
+- [X] Use of **HTML 5**
+- [X] Use of **CSS 3**
+- [X] Use of **Bootstrap**
 
 
 ## How to RUN

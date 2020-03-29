@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  booklist:
+    build: .
+
+    container_name: booklist
+
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    ports:
+      - "80:8000"
+
+    command: python manage.py runserver

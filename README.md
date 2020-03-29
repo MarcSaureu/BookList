@@ -32,6 +32,7 @@ Para desarrollar la interfaz web de BookList utilizamos las siguientes tecnologi
 First of all you **need to clone the repository** before the requeriments part:  
 ```console
 $ source venv/bin/activate
+$ pip install whitenoise
 $ python manage.py runserver
 ```
 

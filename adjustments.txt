@@ -1,0 +1,7 @@
+Model-> Apps name, Two languajes Code, User model not inherited from Django
+Django Admin -> Not all models declared have the __str__ function defined
+User ++
+12factor guidelines -> Not all config variables have been defined, dependencies for whitenoise in requirements.txt
+Travis -> Deploy specification not declared
+Docker -> Some config in docker-compose.yml has not been setted using environtment variables when was possible, Docker imple. only works if appyling some changes
+Heroku --

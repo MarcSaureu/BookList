@@ -1,14 +1,8 @@
 from django.db import models
+from django.contrib.auth import models as auth_models
+
 
 # Create your models here.
-class User(models.Model):
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
-    birth_date = models.DateField()
-    user_alias = models.CharField(max_length=20, unique=True)
-    email = models.CharField(max_length=40, unique=True)
-    password = models.CharField(max_length=20)
-    photo = models.FilePathField(path='BookList/static/img/', default='img/no_photo.png')
 
 class Author(models.Model):
     first_name = models.CharField(max_length=50)
@@ -25,6 +19,10 @@ class Book(models.Model):
     authors = models.ManyToManyField(Author)
 
 class List(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     books = models.ManyToManyField(Book)
+
+class User(auth_models.AbstractUser):
+    birth_date = models.DateField(null=True)
+    photo = models.FilePathField(path='BookList/static/img/', default='img/no_photo.png')
+    lists = models.ManyToManyField(List)
     

@@ -4,6 +4,7 @@ from django.views import generic
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
 
+
 def home(request):
 	return render(request, 'home.html', {})
 
@@ -17,4 +18,4 @@ def logout(request):
 class SignUp(generic.CreateView):
 	form_class = UserCreationForm
 	success_url = reverse_lazy('login')
-	template_name = 'sign_up.html'
+	template_name = 'registration/sign_up.html'

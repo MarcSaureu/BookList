@@ -3,6 +3,7 @@ from .models import User, Author, Book, List
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from BookList import models, forms
 
+# Register your models here.
 
 class UserAdmin(BaseUserAdmin):
 	# The forms to add and change user instances
@@ -12,7 +13,6 @@ class UserAdmin(BaseUserAdmin):
 	# The custom user model we are going to use
 	model = models.User
 
-# Register your models here.
 admin.site.register(models.User, UserAdmin)
 admin.site.register(Author)
 admin.site.register(Book)

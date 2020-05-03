@@ -1,4 +1,3 @@
-Model-> Apps name, Two languajes Code, User model not inherited from Django
 Django Admin -> Not all models declared have the __str__ function defined
 User ++
 12factor guidelines -> Not all config variables have been defined, dependencies for whitenoise in requirements.txt

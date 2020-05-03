@@ -2,14 +2,14 @@
 
 {% block headers %}
 
-	{% if not request.user.is_authenticated %}
+	{% if not user.is_authenticated %}
 		<div class="container-fluid bg-primary text-white">
 			<div class="row" style="padding:5px">
 				<div class="col-lg-10">
 					<h3>BookList</h3>
 				</div>
 				<div class="col-lg-1" >
-					<a href="{% url 'sign' %}" type="button" class="btn btn-outline-light">Sign In</a>
+					<a href="{% url 'signup' %}" type="button" class="btn btn-outline-light">Sign Up</a>
 				</div>
 				<div class="col-lg-1" >
 				<a href="{% url 'login' %}" type="button" class="btn btn-outline-light">Log In</a>
@@ -18,7 +18,7 @@
 		</div>
 	{% endif %}
 
-	{% if request.user.is_authenticated %}
+	{% if user.is_authenticated %}
 		<div class="container-fluid bg-primary text-white">
 			<div class="row" style="padding:5px">
 				<div class="col-md-11">

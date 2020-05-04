@@ -13,6 +13,10 @@ class UserAdmin(BaseUserAdmin):
 	# The custom user model we are going to use
 	model = models.User
 
+	fieldsets = BaseUserAdmin.fieldsets + (
+       	('Personal info', {'fields': ('birth_date', 'photo', 'lists',)}),
+	)
+
 admin.site.register(models.User, UserAdmin)
 admin.site.register(Author)
 admin.site.register(Book)

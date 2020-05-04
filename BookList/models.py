@@ -1,4 +1,3 @@
- 
 from django.db import models
 from django.contrib.auth import models as auth_models
 
@@ -26,3 +25,6 @@ class User(auth_models.AbstractUser):
     birth_date = models.DateField(null=True)
     photo = models.FilePathField(path='BookList/static/img/', default='img/no_photo.png')
     lists = models.ManyToManyField(List)
+
+    def __str__(self):
+        return self.username

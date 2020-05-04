@@ -3,6 +3,7 @@ from django.contrib import auth
 from django.views import generic
 from django.urls import reverse_lazy
 from BookList.forms import UserCreationForm
+from BookList.models import Book
 
 
 def home(request):
@@ -19,3 +20,11 @@ class SignUp(generic.CreateView):
 	form_class = UserCreationForm
 	success_url = reverse_lazy('login')
 	template_name = 'registration/sign_up.html'
+
+def mylists(request):
+
+	books = Book.objects.all()
+
+	context = { 'books': books }
+	return render(request, 'mylists.html', context)
+

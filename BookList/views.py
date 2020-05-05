@@ -28,3 +28,15 @@ def mylists(request):
 	context = { 'books': books }
 	return render(request, 'mylists.html', context)
 
+def Books(request):
+	books = Book.objects.all()
+
+	context = { 'books': books }
+	return render(request, 'books.html', context)
+
+def Authors(request):
+	authors = Author.objects.all()
+
+	context = { 'authors': authors }
+	return render(request, 'authors.html', context)	
+

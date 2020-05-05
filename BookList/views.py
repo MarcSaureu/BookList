@@ -3,7 +3,7 @@ from django.contrib import auth
 from django.views import generic
 from django.urls import reverse_lazy
 from BookList.forms import UserCreationForm
-from BookList.models import Book
+from BookList.models import Book, Author
 
 
 def home(request):
@@ -28,13 +28,13 @@ def mylists(request):
 	context = { 'books': books }
 	return render(request, 'mylists.html', context)
 
-def Books(request):
+def books(request):
 	books = Book.objects.all()
 
 	context = { 'books': books }
 	return render(request, 'books.html', context)
 
-def Authors(request):
+def authors(request):
 	authors = Author.objects.all()
 
 	context = { 'authors': authors }

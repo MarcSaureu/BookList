@@ -10,4 +10,5 @@ urlpatterns = [
 	path('', include('django.contrib.auth.urls')),
 	path('logout/', views.logout, name = 'logout'),
 	path('mylists/', views.mylists, name = 'mylists'),
+	path('authors/', views.authors, name = 'authors')
 ]

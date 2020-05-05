@@ -1,0 +1,21 @@
+{% extends "header.html" %}
+
+{% load static %}
+
+{% block page_content %}
+<h1>Authors</h1>
+<div class="row">
+{% for author in authors %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <div class="card-body">
+                <h5 class="card-title">First Name: {{ author.first_name }}</h5>
+                <h5 class="card-text">Last Name: {{ author.last name }}</h5>
+                <p class="card-text">Birth Date: {{ author.birth_date}}</p>
+                <img class="card-img-top" src="{% author.photo %}"/>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,1 +1,1 @@
-web: gunicorn booklist.wgsi --log-file -
+web: gunicorn BookList.wgsi

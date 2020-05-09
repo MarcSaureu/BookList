@@ -1,1 +1,1 @@
-web: gunicorn BookList.wgsi
+web: gunicorn django_project.wgsi

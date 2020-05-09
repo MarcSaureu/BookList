@@ -1,1 +1,1 @@
-web: gunicorn application.wgsi
+web: gunicorn djangoproject.wgsi

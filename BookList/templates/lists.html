@@ -1,0 +1,18 @@
+{% extends "header.html" %}
+
+{% load static %}
+
+{% block page_content %}
+<h1>Lists</h1>
+<div class="row">
+{% for list in lists %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <div class="card-body">
+                <h5 class="card-title">Books: {{ list.books }}</h5>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -9,6 +9,7 @@ urlpatterns = [
 	path('login/', LoginView.as_view(), name = 'login'),
 	path('', include('django.contrib.auth.urls')),
 	path('logout/', views.logout, name = 'logout'),
-	path('mylists/', views.mylists, name = 'mylists'),
-	path('authors/', views.authors, name = 'authors')
+	path('books/', views.books, name = 'books'),
+	path('authors/', views.authors, name = 'authors'),
+	path('lists/', views.lists, name = 'lists')
 ]

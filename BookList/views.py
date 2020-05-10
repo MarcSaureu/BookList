@@ -3,7 +3,7 @@ from django.contrib import auth
 from django.views import generic
 from django.urls import reverse_lazy
 from BookList.forms import UserCreationForm
-from BookList.models import Book, Author
+from BookList.models import Book, Author, List
 
 
 def home(request):
@@ -21,12 +21,11 @@ class SignUp(generic.CreateView):
 	success_url = reverse_lazy('login')
 	template_name = 'registration/sign_up.html'
 
-def mylists(request):
+def lists(request):
+	lists = List.objects.all()
 
-	books = Book.objects.all()
-
-	context = { 'books': books }
-	return render(request, 'mylists.html', context)
+	context = { 'lists' : lists}
+	return render(request, 'lists.html', context)
 
 def books(request):
 	books = Book.objects.all()
@@ -38,5 +37,4 @@ def authors(request):
 	authors = Author.objects.all()
 
 	context = { 'authors': authors }
-	return render(request, 'authors.html', context)	
-
+	return render(request, 'authors.html', context)

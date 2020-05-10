@@ -25,7 +25,10 @@ class SignUp(generic.CreateView):
 	template_name = 'registration/signup.html'
 
 def mylists(request):
-	return render(request, 'mylists.html', {})
+	lists = List.objects.all()
+
+	context = { 'lists' : lists}
+	return render(request, 'mylists.html', context)
 
 def books(request):
 	books = Book.objects.all()

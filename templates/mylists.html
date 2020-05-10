@@ -5,11 +5,11 @@
 <div class="row">
 
 
-{% for list in request.user.lists.all %}
+{% for list in lists %}
     <div class="col-md-4">
         <div class="card mb-2">
             <div class="card-body">
-                <h5 class="card-title">{{ list }}</h5>
+                <h5 class="card-title">Name: {{ list.name }}</h5>
             </div>
         </div>
     </div>

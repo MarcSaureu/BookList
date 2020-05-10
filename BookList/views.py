@@ -54,7 +54,7 @@ class CreateList(generic.CreateView):
         form.user = self.request.user
         return super(CreateList, self).form_valid(form)
 
-class RestaurantDetail(DetailView):
+class ListDetail(DetailView):
     model = List
     template_name = 'mylists/list_detail.html'
 

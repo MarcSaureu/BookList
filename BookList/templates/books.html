@@ -5,6 +5,25 @@
 {% block page_content %}
 <h1>Books</h1>
 <div class="row">
+  <div class="col-md-4">
+    <h3>Add a Book</h3>
+    <div class="row-md-4">
+      <label for="book">Title</label>
+      <input type="text" id="book" name="book">
+    </div>
+    <div class="row-md-4">
+      <label for="isbn">ISBN</label>
+      <input type="text" id="isbn" name="isbn">
+    </div>
+    <div class="row-md-4">
+      <label for="release_date">Release Date</label>
+      <input type="date" id="release" name="release">
+
+    </div>
+    <button type="submit" name="button">Add Book</button>
+  </div>
+</div>
+<div class="row">
 {% for book in books %}
     <div class="col-md-4">
         <div class="card mb-2">

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib import auth
 from django.views import generic
 from django.urls import reverse_lazy
-from BookList.forms import UserCreationForm
+from BookList.forms import UserCreationForm, BookCreationForm
 from BookList.models import Book, Author, List
 
 
@@ -38,3 +38,8 @@ def authors(request):
 
 	context = { 'authors': authors }
 	return render(request, 'authors.html', context)
+
+class CreateBook(generic.CreateView):
+	model = Book
+	template_name = 'form.html'
+	form_class = BookCreationForm

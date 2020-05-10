@@ -11,5 +11,6 @@ urlpatterns = [
 	path('logout/', views.logout, name = 'logout'),
 	path('books/', views.books, name = 'books'),
 	path('authors/', views.authors, name = 'authors'),
-	path('lists/', views.lists, name = 'lists')
+	path('lists/', views.lists, name = 'lists'),
+	path('books/create_book', views.CreateBook.as_view(), name = 'create_book')
 ]

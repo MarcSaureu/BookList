@@ -45,3 +45,8 @@ class UserChangeForm(auth_forms.UserChangeForm):
 	class Meta:
 		fields = ('username',  )
 		model = models.User
+
+class BookCreationForm(forms.ModelForm):
+	class Meta:
+		fields = ('ISBN', 'title', 'cover_page', 'synopsis', 'release_date', 'authors')
+		model = models.Book

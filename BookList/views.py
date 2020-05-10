@@ -49,10 +49,10 @@ def update_book(request, pk):
 	form = BookCreationForm(instance=book)
 
 	if request.method == 'POST':
-		form= BookCreationForm(request.POST, instance=book)
+		form = BookCreationForm(request.POST, instance=book)
 		if form.is_valid():
 			form.save()
-			return redirect('/books')
+
 	context = {'form':form}
 	return render(request, 'update_book.html', context)
 
@@ -62,7 +62,6 @@ def delete_book(request, pk):
 
 	if request.method == 'POST':
 		book.delete()
-		return redirect('/books')
 
 	context = {'item': book}
 	return render(request, 'delete_book.html', context)

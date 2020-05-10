@@ -27,12 +27,11 @@ For the development of the web interface of BookList we use the following tecnol
 - [X] With the first step done, you will need to install with pip all the prerequisites in *requirements.txt*.
 
 [1]: https://www.python.org/downloads/release/python-376/ "Download Python 3.7.6"
-  
+
 ### Running Project
 First of all you **need to clone the repository** before the requeriments part:  
 ```console
 $ source venv/bin/activate
-$ pip install whitenoise
 $ python manage.py runserver
 ```
 

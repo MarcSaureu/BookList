@@ -18,6 +18,11 @@ urlpatterns = [
 	path('lists/<int:pk>', DetailView.as_view(model=List, template_name='mylists/list_detail.html'), name='list_detail'),
 	path('books/', views.books, name = 'books'),
 	path('books/create_book/', views.CreateBook.as_view(), name = 'create_book'),
-	path('books/update_book/<str:pk>/', views.update_book, name = 'update_book'),
-	path('books/delete_book/<str:pk>/', views.delete_book, name = 'delete_book')
+	path('books/update_book/<int:pk>/', views.update_book, name = 'update_book'),
+	path('books/delete_book/<int:pk>/', views.delete_book, name = 'delete_book'),
+	path('mylists/update_list/<int:pk>/', views.update_list, name = 'update_list'),
+	path('mylists/delete:list/<int:pk>/', views.delete_list, name = 'delete_list'),
+	path('authors/author/', views.CreateAuthor.as_view(), name = 'create_author'),
+	path('authors/update_author/<str:pk>/', views.update_author, name = 'update_author'),
+	path('authors/delete_author/<str:pk>/', views.delete_author, name = 'delete_author')
 ]

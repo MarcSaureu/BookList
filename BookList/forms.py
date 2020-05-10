@@ -49,7 +49,7 @@ class UserChangeForm(auth_forms.UserChangeForm):
 
 class ListCreationForm(forms.ModelForm):
 	class Meta:
-		fields = ('name',)
+		fields = ('name','books')
 		exclude = {'user_id',}
 		model = models.List
 
@@ -57,3 +57,8 @@ class BookCreationForm(forms.ModelForm):
 	class Meta:
 		fields = ('ISBN', 'title', 'cover_page', 'synopsis', 'release_date', 'authors')
 		model = models.Book
+
+class AuthorCreationForm(forms.ModelForm):
+	class Meta:
+		fields = ('first_name', 'last_name', 'birth_date', 'photo')
+		model = models.Author

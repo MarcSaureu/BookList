@@ -4,7 +4,7 @@ from flask import request
 from django.contrib import auth
 from django.views import generic
 from django.urls import reverse_lazy
-from BookList.forms import UserCreationForm, ListCreationForm, BookCreationForm
+from BookList.forms import UserCreationForm, ListCreationForm, BookCreationForm, AuthorCreationForm
 from django.views.generic.detail import DetailView
 from BookList.models import Book, Author, List, User
 
@@ -50,7 +50,6 @@ class CreateList(generic.CreateView):
     template_name = 'form.html'
     form_class = ListCreationForm
 
-
     def form_valid(self, form):
         form.user = self.request.user
         return super(CreateList, self).form_valid(form)
@@ -91,3 +90,54 @@ def delete_book(request, pk):
 
 	context = {'item': book}
 	return render(request, 'delete_book.html', context)
+
+def update_list(request, pk):
+	list = List.objects.get(pk=pk)
+	form = ListCreationForm(instance=list)
+
+	if request.method == 'POST':
+		form = ListCreationForm(request.POST, instance=list)
+		if form.is_valid():
+			form.save()
+			return redirect('/mylists')
+
+	context = {'form' : form}
+	return render(request, 'update_list.html', context)
+
+def delete_list(request, pk):
+	list = List.objects.get(pk=pk)
+
+	if request.method == 'POST':
+		list.delete()
+		return redirect('/mylists')
+
+	context = {'item' : list}
+	return render(request, 'delete_list.html', context)
+
+class CreateAuthor(generic.CreateView):
+	model = Author
+	template_name = 'form.html'
+	form_class = AuthorCreationForm
+
+def update_author(request, pk):
+	author = Author.objects.get(first_name=pk)
+	form = AuthorCreationForm(instance=author)
+
+	if request.method == 'POST':
+		form = AuthorCreationForm(request.POST, instance=author)
+		if form.is_valid():
+			form.save()
+			return redirect('/authors')
+
+	context = {'form' : form}
+	return render(request, 'update_author.html', context)
+
+def delete_author(request, pk):
+	author = Author.objects.get(first_name=pk)
+
+	if request.method == 'POST':
+		author.delete()
+		return redirect('/authors')
+
+	context = {'item' : author}
+	return render(request, 'delete_author.html', context)

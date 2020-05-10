@@ -13,9 +13,14 @@
                 <h5 class="card-text">Last Name: {{ author.last_name }}</h5>
                 <p class="card-text">Birth Date: {{ author.birth_date}}</p>
                 <img class="card-img-top" src="empty"/>
+                <a href="{% url 'update_author' author.first_name %}" type="button" class="btn btn-warning">Edit</a>
+                <a href="{% url 'delete_author' author.first_name %}" type="button" class="btn btn-danger">Delete</a>
             </div>
         </div>
     </div>
     {% endfor %}
+</div>
+<div class="row">
+    <a href="{% url 'create_author' %}" type="button" class="btn btn-success">Register Author</a>
 </div>
 {% endblock %}

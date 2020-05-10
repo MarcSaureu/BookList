@@ -3,5 +3,16 @@
 {% load static %}
 
 {% block page_content %}
-  <p><a>book</a></p>
+
+<div class="row">
+  <div class="col-md-4">
+    <h3>Add a Book</h3>
+    <form method="post">
+      {% csrf_token%}
+      {{ form.as_p }}
+      <button type="submit">Add Book</button>
+    </form>
+  </div>
+</div>
+
 {% endblock %}

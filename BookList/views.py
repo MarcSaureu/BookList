@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib import auth
 from django.views import generic
 from django.urls import reverse_lazy
@@ -52,6 +52,7 @@ def update_book(request, pk):
 		form = BookCreationForm(request.POST, instance=book)
 		if form.is_valid():
 			form.save()
+			return redirect('/books')
 
 	context = {'form':form}
 	return render(request, 'update_book.html', context)
@@ -62,6 +63,7 @@ def delete_book(request, pk):
 
 	if request.method == 'POST':
 		book.delete()
+		return redirect('/books')
 
 	context = {'item': book}
 	return render(request, 'delete_book.html', context)

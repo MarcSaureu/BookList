@@ -6,7 +6,7 @@
 
 <p> Are you sure that you want to delete "{{ item }}"? <p>
 
-<form action="{% url 'delete_book' item.id %}" method="POST">
+<form method="POST">
 
   {% csrf_token %}
   <a href="{% url 'books' %}"> Cancel </a>

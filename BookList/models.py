@@ -15,7 +15,7 @@ class Author(models.Model):
         return self.first_name + self.last_name
 
 class Book(models.Model):
-    ISBN = models.CharField(max_length=13, unique=True)
+    ISBN = models.CharField(max_length=13, unique=True , primary_key=True)
     title = models.CharField(max_length=50)
     cover_page = models.FilePathField(path='BookList/static/img/')
     synopsis = models.TextField()
@@ -24,6 +24,9 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('books')
 
 class User(auth_models.AbstractUser):
     birth_date = models.DateField(null=True)

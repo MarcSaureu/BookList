@@ -15,5 +15,9 @@ urlpatterns = [
 	path('mylists/', views.mylists, name = 'mylists'),
 	path('mylists/create_list/', views.CreateList.as_view(), name='create_list'),
 	path('account/', views.account, name = 'account'),
-	path('lists/<int:pk>', DetailView.as_view(model=List, template_name='mylists/list_detail.html'), name='list_detail')
+	path('lists/<int:pk>', DetailView.as_view(model=List, template_name='mylists/list_detail.html'), name='list_detail'),
+	path('books/', views.books, name = 'books'),
+	path('books/create_book/', views.CreateBook.as_view(), name = 'create_book'),
+	path('books/update_book/<str:pk>/', views.update_book, name = 'update_book'),
+	path('books/delete_book/<str:pk>/', views.delete_book, name = 'delete_book')
 ]

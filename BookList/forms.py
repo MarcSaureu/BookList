@@ -52,3 +52,8 @@ class ListCreationForm(forms.ModelForm):
 		fields = ('name',)
 		exclude = {'user_id',}
 		model = models.List
+
+class BookCreationForm(forms.ModelForm):
+	class Meta:
+		fields = ('ISBN', 'title', 'cover_page', 'synopsis', 'release_date', 'authors')
+		model = models.Book

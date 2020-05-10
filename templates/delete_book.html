@@ -1,0 +1,17 @@
+{% extends "header.html" %}
+
+{% load static %}
+
+{% block page_content %}
+
+<p> Are you sure that you want to delete "{{ item }}"? <p>
+
+<form method="POST">
+
+  {% csrf_token %}
+  <a href="{% url 'books' %}"> Cancel </a>
+  <input type="submit" name="Confirm">
+
+</form>
+
+{% endblock %}

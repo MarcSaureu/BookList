@@ -3,7 +3,11 @@
 {% load static %}
 
 {% block page_content %}
-<h1>Books</h1>
+<h1>Listed Books</h1>
+<div class="row d-flex justify-content-center-left">
+    <a href="{% url 'create_book' %}" type="button" class="btn btn-success"> Add Book</a>
+</div>
+<br>
 <div class="row">
 {% for book in books %}
     <div class="col-md-4">
@@ -12,6 +16,8 @@
                 <h5 class="card-title">ISBN: {{ book.ISBN }}</h5>
                 <h5 class="card-title">Title: {{ book.title }}</h5>
                 <p class="card-text">Release Date: {{ book.release_date}}</p>
+                <a href="{% url 'update_book' book.ISBN %}" type="button" class="btn btn-warning">Edit</a>
+                <a href="{% url 'delete_book' book.ISBN %}" type="button" class="btn btn-danger">Delete</a>
             </div>
         </div>
     </div>

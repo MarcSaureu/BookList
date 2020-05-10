@@ -11,7 +11,4 @@ Feature: Register List
     When I register List
       | name      |
       | Book List |
-    Then I'm viewing the details page for list by "user"
-      | name      |
-      | Book List |
     And There are 1 list

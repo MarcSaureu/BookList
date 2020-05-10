@@ -45,7 +45,7 @@ class CreateBook(generic.CreateView):
 	form_class = BookCreationForm
 
 def update_book(request, pk):
-	book = Book.objects.get(id=pk)
+	book = Book.objects.get(ISBN=pk)
 	form = BookCreationForm(instance=book)
 
 	if request.method == 'POST':
@@ -58,7 +58,7 @@ def update_book(request, pk):
 
 
 def delete_book(request, pk):
-	book = Book.objects.get(id=pk)
+	book = Book.objects.get(ISBN=pk)
 
 	if request.method == 'POST':
 		book.delete()

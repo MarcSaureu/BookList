@@ -16,8 +16,8 @@
                 <h5 class="card-title">ISBN: {{ book.ISBN }}</h5>
                 <h5 class="card-title">Title: {{ book.title }}</h5>
                 <p class="card-text">Release Date: {{ book.release_date}}</p>
-                <a href="" type="button" class="btn btn-warning">Edit</a>
-                <a href="" type="button" class="btn btn-danger">Delete</a>
+                <a href="{% url 'update_book' book.ISBN %}" type="button" class="btn btn-warning">Edit</a>
+                <a href="{% url 'delete_book' book.ISBN %}" type="button" class="btn btn-danger">Delete</a>
             </div>
         </div>
     </div>

@@ -5,6 +5,7 @@ from django.contrib import auth
 from django.views import generic
 from django.urls import reverse_lazy
 from BookList.forms import UserCreationForm, ListCreationForm
+from django.views.generic.detail import DetailView
 from BookList.models import Book, Author, List, User
 
 
@@ -46,6 +47,15 @@ class CreateList(generic.CreateView):
     template_name = 'form.html'
     form_class = ListCreationForm
 
+
     def form_valid(self, form):
-        form.instance.user = self.request.user
+        form.user = self.request.user
         return super(CreateList, self).form_valid(form)
+
+class RestaurantDetail(DetailView):
+    model = List
+    template_name = 'mylists/list_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ListDetail, self).get_context_data(**kwargs)
+        return context

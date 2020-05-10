@@ -45,11 +45,10 @@ class UserChangeForm(auth_forms.UserChangeForm):
 		model = models.User
 	class Meta:
 		fields = ('username',  )
-		model = models.User 
+		model = models.User
 
 class ListCreationForm(forms.ModelForm):
 	class Meta:
 		fields = ('name',)
 		exclude = {'user_id',}
 		model = models.List
-

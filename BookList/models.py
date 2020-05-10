@@ -41,4 +41,4 @@ class List(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('mylists')
+        return reverse('mylists', kwargs = {'pk': self.pk})

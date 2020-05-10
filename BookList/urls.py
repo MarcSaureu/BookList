@@ -1,6 +1,8 @@
 from django.urls import path, include
 from django.contrib.auth.views import LoginView
+from django.views.generic.detail import DetailView
 from BookList import views
+from BookList.models import List
 
 
 urlpatterns = [
@@ -12,5 +14,6 @@ urlpatterns = [
 	path('authors/', views.authors, name = 'authors'),
 	path('mylists/', views.mylists, name = 'mylists'),
 	path('mylists/create_list/', views.CreateList.as_view(), name='create_list'),
-	path('account/', views.account, name = 'account')
+	path('account/', views.account, name = 'account'),
+	path('lists/<int:pk>', DetailView.as_view(model=List, template_name='mylists/list_detail.html'), name='list_detail')
 ]

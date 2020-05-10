@@ -1,4 +1,5 @@
 from django import forms
+from django.forms import ModelForm
 from django.contrib.auth import forms as auth_forms
 from BookList import models
 
@@ -44,5 +45,19 @@ class UserChangeForm(auth_forms.UserChangeForm):
 		model = models.User
 	class Meta:
 		fields = ('username',  )
-		model = models.User 
+		model = models.User
 
+class ListCreationForm(ModelForm):
+	class Meta:
+		fields = ('name','books')
+		model = models.List
+
+class ListChangeForm(ModelForm):
+	class Meta:
+		fields = ('name', 'books')
+		model = models.List
+
+class ListDeleteForm(ModelForm):
+	class Meta:
+		fields = ('name', 'books')
+		model = models.List

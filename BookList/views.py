@@ -54,7 +54,7 @@ def update_book(request, pk):
 			form.save()
 			return redirect('/books')
 	context = {'form':form}
-	return render(request, 'BookList/form.html', context)
+	return render(request, 'update_book.html', context)
 
 
 def delete_book(request, pk):
@@ -62,7 +62,7 @@ def delete_book(request, pk):
 
 	if request.method == 'POST':
 		book.delete()
-		return redirect('BookList:book')
+		return redirect('/books')
 
 	context = {'item': book}
-	return render(request, 'BookList/delete.html', context)
+	return render(request, 'delete_book.html', context)

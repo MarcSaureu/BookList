@@ -12,7 +12,7 @@ class Author(models.Model):
     photo = models.FilePathField(path='BookList/static/img/', default='img/no_photo.png')
 
 class Book(models.Model):
-    ISBN = models.CharField(max_length=13, unique=True)
+    ISBN = models.CharField(max_length=13, unique=True , primary_key=True)
     title = models.CharField(max_length=50)
     cover_page = models.FilePathField(path='BookList/static/img/')
     synopsis = models.TextField()

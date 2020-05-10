@@ -43,3 +43,26 @@ class CreateBook(generic.CreateView):
 	model = Book
 	template_name = 'form.html'
 	form_class = BookCreationForm
+
+def update_book(request, pk):
+	book = Book.objects.get(id=pk)
+	form = BookCreationForm(instance=book)
+
+	if request.method == 'POST':
+		form= BookCreationForm(request.POST, instance=book)
+		if form.is_valid():
+			form.save()
+			return redirect('/books')
+	context = {'form':form}
+	return render(request, 'BookList/form.html', context)
+
+
+def delete_book(request, pk):
+	book = Book.objects.get(id=pk)
+
+	if request.method == 'POST':
+		book.delete()
+		return redirect('BookList:book')
+
+	context = {'item': book}
+	return render(request, 'BookList/delete.html', context)

@@ -14,7 +14,7 @@ class UserAdmin(BaseUserAdmin):
 	model = models.User
 
 	fieldsets = BaseUserAdmin.fieldsets + (
-       	('Personal info', {'fields': ('birth_date', 'photo', 'lists',)}),
+       	('Personal info', {'fields': ('birth_date', 'photo',)}),
 	)
 
 admin.site.register(models.User, UserAdmin)

@@ -5,10 +5,12 @@ from BookList import views
 
 urlpatterns = [
 	path('', views.home, name = 'BookList'),
-	path('signup/', views.SignUp.as_view(), name='signup'),
-	path('login/', LoginView.as_view(), name = 'login'),
+	path('account/signup/', views.SignUp.as_view(), name='signup'),
+	path('account/login/', LoginView.as_view(), name = 'login'),
 	path('', include('django.contrib.auth.urls')),
-	path('logout/', views.logout, name = 'logout'),
+	path('account/logout/', views.logout, name = 'logout'),
+	path('authors/', views.authors, name = 'authors'),
 	path('mylists/', views.mylists, name = 'mylists'),
-	path('authors/', views.authors, name = 'authors')
+	path('mylists/create_list/', views.CreateList.as_view(), name='create_list'),
+	path('account/', views.account, name = 'account')
 ]

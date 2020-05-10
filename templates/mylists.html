@@ -1,0 +1,21 @@
+{% extends "header.html" %}
+
+{% block page_content %}
+<h1>My Lists</h1>
+<div class="row">
+
+
+{% for list in request.user.lists.all %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <div class="card-body">
+                <h5 class="card-title">{{ list }}</h5>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="row">
+    <a href="{% url 'create_list' %}" type="button" class="btn btn-success">Register List</a>
+{% endblock %}

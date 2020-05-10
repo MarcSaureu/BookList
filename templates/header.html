@@ -9,10 +9,10 @@
 					<h3>BookList</h3>
 				</div>
 				<div class="col-lg-1" >
-					<a href="{% url 'signup' %}" type="button" class="btn btn-outline-light">Sign Up</a>
+					<a href="{% url 'signup' %}" type="button" class="btn btn-outline-light">Signup</a>
 				</div>
 				<div class="col-lg-1" >
-				<a href="{% url 'login' %}" type="button" class="btn btn-outline-light">Log In</a>
+				<a href="{% url 'login' %}" type="button" class="btn btn-outline-light">Login</a>
 				</div>
 			</div>
 		</div>
@@ -31,11 +31,10 @@
 							</button>
 					 	<div class="dropdown-menu">
 							<a href="{% url 'mylists' %}" class="dropdown-item" href="#">My Lists</a>
-							<a href="{% url 'books' %}" class="dropdown-item" href="#">Books</a>
 							<a href="{% url 'authors' %}" class="dropdown-item" href="#">Authors</a>
-							<a class="dropdown-item" href="#">Profile</a>
+							<a href="{% url 'account' %}" class="dropdown-item" href="#">Account</a>
 							<div class="dropdown-divider"></div>
-							<a href="{% url 'logout' %}" class="dropdown-item" href="#">Log Out</a>
+							<a href="{% url 'logout' %}" class="dropdown-item" href="#">Logout</a>
 					 	</div>
 					</div>
 				</div>

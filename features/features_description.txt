@@ -1,0 +1,41 @@
+- register_list.feature
+    Feature: Register List
+    In order to keep track of books I want to read or I have read,
+    As a user,
+    I want to register a list with its name and description.
+
+- add_book.feature
+    Feature: Add Book
+    In order to save a book in my registered list for any reason,
+    As a user,
+    I want add a book in the corresponding list, with its details.
+
+- view_list.feature
+    Feature: View List
+    In order to know about a list,
+    As a user
+    I want to view a list, with its books and details.
+
+- view_book.feature
+    Feature: View Book
+    In order to know about a book,
+    As a user
+    I want to view a book, with its details.
+
+- edit_list.Feature
+    Feature: Edit List
+    In order to keep updated my previous registers about lists,
+    As a user
+    I want to edit a list I created.
+
+- remove_list.Feature
+    Feature: Remove List
+    In order to remove a list for any reason,
+    As a user
+    I want to remove a list, and its books and details.
+
+- remove_book.feature
+    Feature: Remove Book
+    In order to remove a book from a list for any reason,
+    As a user
+    I want to remove a book from a list.

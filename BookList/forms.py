@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth import forms as auth_forms
 from BookList import models
 
+
 class AuthenticationForm(auth_forms.AuthenticationForm):
 	username = forms.CharField(
 		widget=forms.TextInput(
@@ -34,7 +35,7 @@ class AuthenticationForm(auth_forms.AuthenticationForm):
 class UserCreationForm(auth_forms.UserCreationForm):
 	# A form for creating new users. It includes an additional field not used by default (email).
 	class Meta:
-		fields = ('username', 'email' )
+		fields = ('username', 'email', 'birth_date')
 		model = models.User
 
 class UserChangeForm(auth_forms.UserChangeForm):
@@ -44,4 +45,11 @@ class UserChangeForm(auth_forms.UserChangeForm):
 		model = models.User
 	class Meta:
 		fields = ('username',  )
-		model = models.User
+		model = models.User 
+
+class ListCreationForm(forms.ModelForm):
+	class Meta:
+		fields = ('name',)
+		exclude = {'user_id',}
+		model = models.List
+

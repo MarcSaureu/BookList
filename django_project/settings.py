@@ -135,10 +135,12 @@ AUTH_USER_MODEL = 'BookList.User' # Indicates the model to use in order to repre
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.AllowAllUsersModelBackend',
 )
-STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL =  '/'
 LOGOUT_REDIRECT_URL = '/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static'),

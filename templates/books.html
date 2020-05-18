@@ -3,24 +3,32 @@
 {% load static %}
 
 {% block page_content %}
-<h1>Listed Books</h1>
-<div class="row d-flex justify-content-center-left">
-    <a href="{% url 'create_book' %}" type="button" class="btn btn-success"> Add Book</a>
-</div>
-<br>
-<div class="row">
-{% for book in books %}
-    <div class="col-md-4">
-        <div class="card mb-2">
-            <div class="card-body">
-                <h5 class="card-title">ISBN: {{ book.ISBN }}</h5>
-                <h5 class="card-title">Title: {{ book.title }}</h5>
-                <p class="card-text">Release Date: {{ book.release_date}}</p>
-                <a href="{% url 'update_book' book.ISBN %}" type="button" class="btn btn-warning">Edit</a>
-                <a href="{% url 'delete_book' book.ISBN %}" type="button" class="btn btn-danger">Delete</a>
+<span vocab="http://schema.org/" typeof="Book">
+    <h1>Listed Books</h1>
+    <div class="row d-flex justify-content-center-left">
+        <a href="{% url 'create_book' %}" type="button" class="btn btn-success"> Add Book</a>
+    </div>
+    <br>
+    <div class="row">
+    {% for book in books %}
+        <div class="col-md-4">
+            <div class="card mb-2">
+                <div class="card-body">
+                    <span property="isbn">
+                        <h5 class="card-title">ISBN: {{ book.ISBN }}</h5>
+                    </span>
+                    <span property="name">
+                        <h5 class="card-title">Title: {{ book.title }}</h5>
+                    </span>
+                    <span property="dateCreated">
+                        <h6 class="card-text">Release Date: {{ book.release_date}}</h6>
+                    </span>
+                    <a href="{% url 'update_book' book.ISBN %}" type="button" class="btn btn-warning">Edit</a>
+                    <a href="{% url 'delete_book' book.ISBN %}" type="button" class="btn btn-danger">Delete</a>
+                </div>
             </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
+</span>
 {% endblock %}
